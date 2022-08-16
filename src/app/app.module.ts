@@ -5,6 +5,9 @@ import { AppComponent } from './app.component';
 import { StepComponent } from './components/step/step.component';
 import { FilterComponent } from './components/filter/filter.component';
 import { DropdownModule } from 'primeng/dropdown';
+import { FormsModule } from '@angular/forms';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
@@ -16,6 +19,8 @@ import { DropdownModule } from 'primeng/dropdown';
     BrowserModule,
     HttpClientModule,
     DropdownModule,
+    FormsModule,
+    BrowserAnimationsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

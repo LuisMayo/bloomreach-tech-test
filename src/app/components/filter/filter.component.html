@@ -1,1 +1,2 @@
-<p-dropdown [options]="filterOptions"  optionLabel="property"></p-dropdown>
+{{filterOptions | json}}
+<p-dropdown [options]="filterOptions"  optionLabel="property" [(ngModel)]="dropdown"></p-dropdown>

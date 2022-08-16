@@ -11,6 +11,8 @@ export class FilterComponent implements OnInit {
   @Input()
   filterOptions: Property[] = [];
 
+  dropdown: any;
+
   constructor() { }
 
   ngOnInit(): void {

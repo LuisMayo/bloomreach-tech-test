@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { CustomerEventsResponse } from './responses/customer-events.response';
+import { CustomerEventsResponse } from './classes/responses/customer-events.response';
 import { CustomerEventsService } from './services/customer-events.service';
 
 @Component({

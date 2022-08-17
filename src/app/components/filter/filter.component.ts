@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { Property } from 'src/app/responses/customer-events.response';
+import { Property } from 'src/app/classes/responses/customer-events.response';
 
 @Component({
   selector: 'app-filter',
@@ -11,7 +11,7 @@ export class FilterComponent implements OnInit {
   @Input()
   filterOptions: Property[] = [];
 
-  dropdown: any;
+  selectedField?: Property;
 
   constructor() { }
 

@@ -1,2 +1,2 @@
 <p-dropdown [options]="filterOptions"  optionLabel="property" [(ngModel)]="selectedField" [filter]="true"></p-dropdown>
-<!-- <p-dropdown *ngIf="selectedField" [options]="selectedField."></p-dropdown> -->
+<p-dropdown *ngIf="selectedField" [options]="this.filterOptions" [group]="true" optionLabel="label" optionGroupLabel="type"></p-dropdown>

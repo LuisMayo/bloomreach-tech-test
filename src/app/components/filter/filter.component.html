@@ -1,2 +1,19 @@
 <p-dropdown [options]="filterOptions"  optionLabel="property" [(ngModel)]="selectedField" [filter]="true"></p-dropdown>
-<p-dropdown *ngIf="selectedField" [options]="this.filterOptions" [group]="true" optionLabel="label" optionGroupLabel="type"></p-dropdown>
+<p-dropdown *ngIf="selectedField" [options]="this.filterTypes" [group]="true" optionGroupChildren="items"
+optionGroupLabel="type"
+optionLabel="label"
+[(ngModel)]="selectedFilter">
+</p-dropdown>
+<ng-container *ngIf="selectedFilter" [ngTemplateOutlet]="getActiveTemplate()"></ng-container>
+
+<ng-template #textField>
+    <input type="text" pInputText>
+</ng-template>
+
+<ng-template #numberField>
+    <p-inputNumber></p-inputNumber>
+</ng-template>
+
+<ng-template #twoNumberField>
+    <p-inputNumber></p-inputNumber> and <p-inputNumber></p-inputNumber>
+</ng-template>

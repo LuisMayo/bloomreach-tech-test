@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
+import { Event } from 'src/app/classes/responses/customer-events.response';
 
 @Component({
   selector: 'app-step',
@@ -7,9 +8,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class StepComponent implements OnInit {
 
+  @Input()
+  stepOptions!: (Event | null)[];
+
+  selectedStep?: Event;
+
   constructor() { }
 
   ngOnInit(): void {
+    this.stepOptions.unshift(null);
   }
 
 }

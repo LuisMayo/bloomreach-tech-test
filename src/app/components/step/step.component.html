@@ -1,1 +1,2 @@
-<p>step works!</p>
+<p-dropdown [options]="stepOptions" [(ngModel)]="selectedStep"></p-dropdown>
+<app-filter *ngIf="selectedStep != null" [filterOptions]="selectedStep.properties"></app-filter>

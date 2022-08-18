@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FilterType, FilterTypeCategory } from 'src/app/classes/filterTypes';
+import { Component, Input, OnInit, TemplateRef, ViewChild } from '@angular/core';
+import { FilterType, FilterTypeCategory, FilterTypeId } from 'src/app/classes/filterTypes';
 import { Property } from 'src/app/classes/responses/customer-events.response';
 
 @Component({
@@ -12,9 +12,20 @@ export class FilterComponent implements OnInit {
   @Input()
   filterOptions: Property[] = [];
 
+  @ViewChild('textField')
+  textField!: TemplateRef<any>;
+
+  @ViewChild('numberField')
+  numberField!: TemplateRef<any>;
+
+  @ViewChild('twoNumberField')
+  twoNumberField!: TemplateRef<any>;
+
   selectedField?: Property;
 
   filterTypes: {type: FilterTypeCategory, items: FilterType[]}[];
+
+  selectedFilter!: FilterType;
 
   constructor() {
     const rawFilters = FilterType.getFilters();
@@ -24,6 +35,16 @@ export class FilterComponent implements OnInit {
   }
 
   ngOnInit(): void {
+  }
+
+  getActiveTemplate() {
+    if (this.selectedFilter.category === FilterTypeCategory.STRING) {
+      return this.textField;
+    } else if (this.selectedFilter.id === FilterTypeId.BETWEEN) {
+      return this.twoNumberField;
+    } else {
+      return this.numberField;
+    }
   }
 
 }

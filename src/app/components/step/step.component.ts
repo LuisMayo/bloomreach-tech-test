@@ -11,7 +11,7 @@ export class StepComponent implements OnInit {
   @Input()
   stepOptions!: (Event | null)[];
 
-  selectedStep?: Event;
+  selectedSteps: (Event | null)[] = [null];
 
   constructor() { }
 

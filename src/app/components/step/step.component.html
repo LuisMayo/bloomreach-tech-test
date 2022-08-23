@@ -1,2 +1,4 @@
-<p-dropdown [options]="stepOptions" [(ngModel)]="selectedStep" optionLabel="type" [filter]="true"></p-dropdown>
-<app-filter *ngIf="selectedStep != null" [filterOptions]="selectedStep.properties"></app-filter>
+<ng-container *ngFor="let step of selectedSteps; let i = index">
+    <p-dropdown [options]="stepOptions" [(ngModel)]="selectedSteps[i]" optionLabel="type" [filter]="true"></p-dropdown>
+    <app-filter *ngIf="step != null" [filterOptions]="step.properties"></app-filter>
+</ng-container>
